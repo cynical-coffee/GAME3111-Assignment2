@@ -148,11 +148,9 @@
     <ClCompile Include="..\Common\MathHelper.cpp" />
     <ClCompile Include="FrameResource.cpp" />
     <ClCompile Include="Week4-1-BoxUsingFrameResources.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Week4-6-ShapeComplete.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Week5-1-CrateApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GAME3111-Assignment1.rc" />
