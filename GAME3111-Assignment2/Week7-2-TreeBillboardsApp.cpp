@@ -496,13 +496,21 @@ void TreeBillboardsApp::UpdateMainPassCB(const GameTimer& gt)
 	mMainPassCB.FarZ = 1000.0f;
 	mMainPassCB.TotalTime = gt.TotalTime();
 	mMainPassCB.DeltaTime = gt.DeltaTime();
-	mMainPassCB.AmbientLight = { 0.35f, 0.10f, 0.10f, 1.0f };
+	/*mMainPassCB.AmbientLight = { 0.35f, 0.10f, 0.10f, 1.0f };
 	mMainPassCB.Lights[0].Direction = { 0.57735f, -0.57735f, 0.57735f };
 	mMainPassCB.Lights[0].Strength = { 0.6f, 0.6f, 0.6f };
 	mMainPassCB.Lights[1].Direction = { -0.57735f, -0.57735f, 0.57735f };
 	mMainPassCB.Lights[1].Strength = { 0.3f, 0.3f, 0.3f };
 	mMainPassCB.Lights[2].Direction = { 0.0f, -0.707f, -0.707f };
-	mMainPassCB.Lights[2].Strength = { 0.15f, 0.15f, 0.15f };
+	mMainPassCB.Lights[2].Strength = { 0.15f, 0.15f, 0.15f };*/
+
+	mMainPassCB.AmbientLight = { 0.30f, 0.30f, 0.30f, 1.0f };
+	mMainPassCB.Lights[0].Strength = { 1.5f, 0.5f, 0.2f };
+	mMainPassCB.Lights[0].FalloffStart = 3.0f;
+	mMainPassCB.Lights[0].Direction = { 0.0f, -1.0f, -1.0f };
+	mMainPassCB.Lights[0].FalloffEnd = 5.0f;
+	mMainPassCB.Lights[0].Position = { 0.0f, 10.0f, -10.0f };
+	mMainPassCB.Lights[0].SpotPower = 21.0;
 
 	auto currPassCB = mCurrFrameResource->PassCB.get();
 	currPassCB->CopyData(0, mMainPassCB);
