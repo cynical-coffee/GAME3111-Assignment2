@@ -667,11 +667,11 @@ GeometryGenerator::MeshData GeometryGenerator::CreateSquarePyramid(float height,
 	float h2 = 0.5f * height;
 	float d2 = 0.5f * depth;
 
-	v[0] = Vertex( w2, 0,  d2,0,0,0,0,0,0,0,0); 
-	v[1] = Vertex( w2, 0, -d2, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[2] = Vertex(-w2, 0, -d2, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[3] = Vertex(-w2, 0,  d2, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[4] = Vertex( 0, h2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	v[0] = Vertex( w2, 0,  d2,1,0,0,0,0,0,0,1); 
+	v[1] = Vertex( w2, 0, -d2, 0, 1, 0, 0, 0, 0, 1, 0);
+	v[2] = Vertex(-w2, 0, -d2, 0, 1, 0, 0, 0, 0, 0, 1);
+	v[3] = Vertex(-w2, 0,  d2, 1, 0, 0, 0, 0, 0, 1, 0);
+	v[4] = Vertex( 0, h2, 0, 0, 1, 0, 0, 0, 0, 0, 0);
 
 	meshdata.Vertices.assign(&v[0], &v[5]);
 
@@ -950,12 +950,12 @@ GeometryGenerator::MeshData GeometryGenerator::CreateDiamond(float width, float 
 
 	Vertex v[6];
 
-	v[0] = Vertex(0, h2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[1] = Vertex(0, 0, d2, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[2] = Vertex(w2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	v[0] = Vertex(0, h2, 0, 0, 1, 0, 0, 0, 0, 0, 0.5f);
+	v[1] = Vertex(0, 0, d2, 0, 0, 0, 0, 0, 0, 0.5f, 1);
+	v[2] = Vertex(w2, 0, 0, 1, 0, 0, 0, 0, 0, 0.5f, 0);
 	v[3] = Vertex(0, 0, -d2, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[4] = Vertex(-w2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-	v[5] = Vertex(0, -h2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	v[4] = Vertex(-w2, 0, 0, -1, 0, 0, 0, 0, 0, 0.5f, 0);
+	v[5] = Vertex(0, -h2, 0, 0, -1, 0, 0, 0, 0, 0.5f, 1);
 
 	meshdata.Vertices.assign(&v[0], &v[6]);
 
